@@ -6,7 +6,7 @@ const TODOS_LS = 'toDos'; //TODOS_LocalStorage
 
 const toDos = [];
 
-function deleteTodo(event){
+function deleteToDo(event){
 const btn = event.target;
 const li = btn.parentNode;
 toDoList.removeChild(li);
