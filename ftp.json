@@ -1,0 +1,13 @@
+[
+	{
+		"name": "helloumb",
+		"host": "helloumb.dothome.co.kr",
+		"port": 21,
+		"type": "ftp",
+		"username": "helloumb",
+		"password": "helloworld!1",
+		"path": "/html/",
+		"autosave": true,
+		"confirm": false
+	}
+]

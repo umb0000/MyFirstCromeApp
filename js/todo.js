@@ -6,18 +6,26 @@ const TODOS_LS = 'toDos'; //TODOS_LocalStorage
 
 const toDos = [];
 
+function deleteTodo(event){
+const btn = event.target;
+const li = btn.parentNode;
+toDoList.removeChild(li);
+
+}
+
+
 function saveToDos() { 
 	localStorage.setItem(TODOS_LS,JSON.stringify(toDos)); //TODOS_LS 를 toDos에 저장
 }
 
 function paintToDo(text){
  const li = document.createElement("li");
-  const span = document.createElement("span");
  const delBtn = document.createElement("button");
-
+ const span = document.createElement("span");
  const newId = toDos.length + 1;
- span.innerText = text; 
- delBtn.innerText = "❌";
+  delBtn.innerText = "❌";
+  delBtn.addEventListener("click", deleteToDo);
+  span.innerText = text; 
  li.appendChild(delBtn);
  li.appendChild(span);
  li.id = newId;
@@ -35,7 +43,7 @@ function handleSubmit(event){
 	event.preventDefault();
 	const currentValue = toDoInput.value;
 	paintToDo(currentValue);
-	toDoInput.value = ""; //엔터 쳤을 때 창에 남아있는게 없게. toDoInput변수 ""로 처리
+	toDoInput.value = ""; //엔터 쳤을 때 창에 남아있는게 없게. toDoInput변수 ""로 처리//
 }
 
 
